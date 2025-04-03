@@ -16,7 +16,7 @@ pipeline {
                 script {
                     //Criando a conexão com o Docker Hub para power enviar a imagem criada no Step anterior
                     docker.withRegistry('https://registry.hub.docker.com', 'dockerhub') {
-                    //Enviar a imagem dockerapp para o Docker Hub
+                    //Enviar a imagem dockerapp para o Docker Hub.
                     dockerapp.push('latest')
                     dockerapp.push("${env.BUILD_ID}")
                     }
