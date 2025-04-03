@@ -1,28 +1,28 @@
+//Exemplo de um arquivo jenkisfile
+//A extenção do arquivo não é .js coloquei apenas para ter uma formatação minima.
+
 pipeline {
     agent any
 
     stages {
         stage('Build Docker Image') {
             steps {
-                script {
-                    //Variável de construção da imagem Docker
-                    sh 'Aqui vai os comandos do step 1'
-                }
-            }
-        }
-
-        stage('Push Docker Image') {
-            steps {
-                script {
-                    //Criando a conexão com o Docker Hub para power enviar a imagem criada no Step anterior
-                    sh '"Aqui vai os comandos do step 2"'
-                }
+                //Screva o estep aqui
+                sh 'echo "Executando o comando Docker Build"'
             }
         }
         
-        stage('Deploy no Kubernetes') {
+        stage('Build Docker Image') {
             steps {
-                sh '"Aqui vai os comandos do step 3"'
+                //Screva o estep aqui
+                sh 'echo "Executando o comando Docker push"'
+            }
+        }
+        
+        stage('Build Docker Image') {
+            steps {
+                //Screva o estep aqui
+                sh 'echo "Executando o comando Docker kubectl apply"'
             }
         }
     }
