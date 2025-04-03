@@ -8,13 +8,13 @@ pipeline {
             }
         }
 
-        stage('Build Docker Image') {
+        stage('Push Docker Image') {
             steps {
                 sh 'echo "Executando o comando Docker push"'
             }
         }
         
-        stage('Build Docker Image') {
+        stage('Deploy no Kubernetes') {
             steps {
                 sh 'echo "Executando o comando Docker kubectl apply"'
             }
