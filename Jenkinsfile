@@ -9,7 +9,7 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 script {
-                    echo "Pass"
+                    echo "Aqu vai os comandos do Step 1"
                     //Variável de construção da imagem Docker
                     //dockerapp = docker.build("Wanderson304/guia-pratico-jenkins:${env.BUILD_ID}", '-f ./src/Dockerfile ./src')
                 }
@@ -19,8 +19,9 @@ pipeline {
         stage('Push Docker Image') {
             steps {
                 script {
+                    echo "Aqu vai os comandos do Step 2"
                     //Criando a conexão com o Docker Hub para power enviar a imagem criada no Step anterior
-                    docker.withRegistry('https://registry.hub.docker.com', 'dockerhub') {
+                    //docker.withRegistry('https://registry.hub.docker.com', 'dockerhub') {
                     //Enviar a imagem dockerapp para o Docker Hub.
                     dockerapp.push('latest')
                     dockerapp.push("${env.BUILD_ID}")
@@ -31,7 +32,8 @@ pipeline {
         
         stage('Deploy no Kubernetes') {
             steps {
-                sh 'echo "Executando o comando Docker kubectl apply"'
+               echo "Aqu vai os comandos do Step 2"
+               //????
             }
         }
     }
