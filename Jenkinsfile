@@ -6,7 +6,7 @@ pipeline {
             steps {
                 script {
                     //Variável de construção da imagem Docker
-                    //sh '"Aqui vai os comandos do step 1"'
+                    sh 'Aqui vai os comandos do step 1'
                 }
             }
         }
