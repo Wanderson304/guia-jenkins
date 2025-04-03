@@ -9,6 +9,7 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 script {
+                    echo "Pass"
                     //Variável de construção da imagem Docker
                     //dockerapp = docker.build("Wanderson304/guia-pratico-jenkins:${env.BUILD_ID}", '-f ./src/Dockerfile ./src')
                 }
