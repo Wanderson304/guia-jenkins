@@ -6,7 +6,7 @@ pipeline {
             steps {
                 script {
                     //Variável de construção da imagem Docker
-                    dockerapp = docker.build("Wanderson304/guia-pratico-jenkins:${env.BUILD_ID}", '-f ./src/Dockerfile ./src')
+                    dockerapp = docker.build("fabricioveronez/guia-pratico-jenkins:${env.BUILD_ID}", '-f ./src/Dockerfile ./src')
                 }
             }
         }
